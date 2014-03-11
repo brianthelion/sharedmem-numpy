@@ -4,7 +4,7 @@
 # Modified by Sturla Molden, 2009
 
 import copy_reg
-import sharedmem.heap as heap
+import npshm.heap as heap
 
 import numpy as np
 
