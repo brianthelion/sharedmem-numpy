@@ -17,7 +17,7 @@ print "sys.platform:", sys.platform
 
 if sys.platform == 'win32':
 
-    winshared =  Extension("sharedmem.sharedmemory_win", ["sharedmem/sharedmemory_win.pyx", "sharedmem/ntqueryobject.c"],
+    winshared =  Extension("npshm.sharedmemory_win", ["npshm/sharedmemory_win.pyx", "npshm/ntqueryobject.c"],
                            include_dirs=[np.get_include()])
 
 
@@ -28,8 +28,8 @@ else: #if sys.platform == 'linux2' # or 'darwin'
     lib_dirs = [r'/usr/local/lib', r'.']
     libs = ['m']
 
-    unixshared =  Extension("sharedmem.sharedmemory_sysv",
-                            ["sharedmem/sharedmemory_sysv.pyx"],
+    unixshared =  Extension("npshm.sharedmemory_sysv",
+                            ["npshm/sharedmemory_sysv.pyx"],
                             include_dirs=[np.get_include()],
                            library_dirs=lib_dirs,
                            libraries=libs)
@@ -48,7 +48,7 @@ setup(
         "Intended Audience :: Scientific programmers",
         "License :: scipy",
         "Operating System :: unix, windows"],
-    packages=["sharedmem"],
+    packages=["npshm"],
 #    zip_safe=False, # because of ext module
     cmdclass = {'build_ext': build_ext},
     ext_modules = ext_modules,
