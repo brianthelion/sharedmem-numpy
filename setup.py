@@ -38,8 +38,8 @@ else: #if sys.platform == 'linux2' # or 'darwin'
 
 setup(
     author="Sturla Molden",
-    name="numpy-sharedmem",
-    version="2009-03-15",
+    name="npshm",
+    version="",
     license='scipy license (http://scipy.org)', 
     description="numpy-sharedmem  easy to use shared memory implementation for numpy to make it easy to share memory in an array across processes and threads.",
     url='',
